@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Data from models</title>
+    <link rel="stylesheet" href="{%static "css/mystyle.css"%}">
+  </head>
+  <body>
+    <!-- <h1>I am image header</h1>
+    <img src="{% static "images/sai.jpg" %}" alt="Not found"> -->
+    <h1>Data from models and users list</h1>
+    <table>
+    {% for loopindex in access_records %}
+      <tr>
+        <td>{{ loopindex.name }}</td>
+        <td>{{ loopindex.date }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+    <ol>
+    {% for loopindex in userlist %}
+
+        <li>User info</li>
+        <ul>
+          <li>Firstname:{{ loopindex.firstname }}</li>
+          <li>Lastname:{{ loopindex.lastname }}</li>
+          <li>Email:{{ loopindex.email }}</li>
+        </ul>
+
+    {% endfor %}
+    </ol>
+
+
+
+  </body>
+</html>
